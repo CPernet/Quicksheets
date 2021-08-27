@@ -1,0 +1,35 @@
+# CSS
+
+## link HTML and CSS
+
+Tell the html webpage where to find the stlying sheet.
+
+```html5
+<head>
+  <link rel='stylesheet' href='css/styles.css'>
+</head>
+```
+## CSS model
+
+Each element is a box with basic properties. The content with padding and borders and finally the margins of the box - these are defined with `width`, `height`, `padding`, `margin` and `border` (space between padding and margin). Inline elements of the html file are just stringed together, while block elements (e.g. article, section) are staked. This behaviour can changed using the display property.
+
+```html5
+<div> this is a block element</div>
+<span> this is an inline element </span>
+```
+
+```css
+div{
+  height: 50px;
+  width: 100px;
+  display: inline-block;
+}
+span{
+  height: 50px;
+  width: 100px;
+  display: block;
+}
+```
+
+- Inspect each element in the browser using developer tools.
+- A good trick while programming is add `background` with different colors which affects the box content and padding - while margins are left blank.

@@ -1,0 +1,155 @@
+# Hypertext Markup Language quicksheet
+
+This is a list of simple html tags. Each tag allows to create an element. For each element, we can add atrributes.
+
+For full content, as usual for any web-related language, check the [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/HTML). With html, markup any sections and elements using opening `< >` and closing `</ >` tags, including comments, using `<!-- comments -->`
+
+## Markup sections
+
+```html5
+<!doctype html>
+<html lang="en-GB">
+  <head> <!--metadata-->
+  </head>
+
+  <body>
+  </body>
+
+  <footer>
+  </footer>
+</html>
+```
+
+### `<head>`
+
+- `<meta charset="UTF-8">` indicates to use unicode throughout
+- `<title> my cool webpage </title>`
+- `<meta name="description" content="my stuff">`
+- `<link href="main.css" rel="stylesheet">` loads the main.css file which is a stylesheet
+- `<link rel="icon" href="favicon.ico">`loads icons from the favicon url
+- `<script src="my_javascript.js"></script>` (or move it at the end of the page, depends what needs to be loaded)
+
+
+### `<body>`
+
+Create self contained elements in a page
+
+- `<main> </main>` used only once
+- `<header> </header>`head of the section, article, blockquote, etc.
+- `<section> </section>` the standard element declaration, ideal place to define a class attribute to apply dedicated CSS to it.
+- `<div> </div>` the standard element declaration without semantic, useful for styling with CSS
+- `<article> </article>` a seft contained publication ;
+- goes well a publication time stamp using the time tag and datetime attribute `<time datetime="YYYY-MM-DD hh-mm-ss.ddd +- hh:mm"> date </time>` indicating the date YYYY-MM-DD and/or hour hh-mm-ss.ddd (with or witout seconds and decimals) + or - some time hh:mm to reflect tme zone.
+- `<blockquote> </blockquote>` a whole section quoting someone ;
+- goes well with `<cite> name </cite>`.
+- `<aside> </aside>` marks a section as distinct (side bar, insert, etc)
+- `<form> </form>` ready made tag to make forms
+
+## Standard tags for any elements
+
+- `<h1> </h1>` headline 1,2,3,4,5,6
+- `<p> </p>` paragraph
+- `<a> </a>` anchor - works nicely with Hypertext reference attribute `href="https:somewhere"` (HyperText Transport Protocol Secure must be in)
+- `<code> </code>` unicode for code
+- `<br>` insert a line break
+- `<pre> </pre>` keeps formatting and spacing
+- `<span> </span>` do all the elements split without semantic ; useful however when adding a class or id to target an element with CSS or JavaScript.
+- `<table> </table>` with `<tr>` `<td>`
+- `<sub> </sub>` subscript
+- `<sup> </sup>` superscript
+- `<i> </i>` italic
+- `<em> </em>` emphasis (comes out as italic but semantically means it's importance, vs. purely for style)
+- `<b> </b>` bold
+- `<strong> </strong>` important (comes out as bold but semantically means it's importance, vs. purely for style)
+- `<small> </small>` not important (comes out as small script but semantically means it's not important)
+- `<q> </q>` quote (style change with browser parameters/language)
+
+
+### HTML entities
+
+- `&lt;` for <, `&gt;` for >, `&amp;` for & can also be useful especially to render those characters in e.g. code.
+- `&nbsp;` non breaking space is used to mark a space that the browser cannot wrap around (also forces extra spaces).
+
+There are plenty other entitites for symbols (useful if not on the keyboad) see the [W3C page](https://dev.w3.org/html5/html-author/charref).
+
+### Attributes
+
+- `class` gives a REUSABLE name to an element, any element with that class can be rendered using CSS and act upon using JavaScript e.g. `<p class="main_text"> stuff </p>`.
+- `id` gives a UNIQUE name to an element, particularly useful for JavaScript e.g. `<p class="main_text" id="intro"> stuff </p>`.
+- `lang` to indicate laguage used.
+
+
+### Lists
+
+`<li> </li>` markup items of a list
+- `<ul> </ul>` indicate an unordered list before/after `<li> </li>` items
+- `<ol> </ol>` indicate an ordered list before/after `<li> </li>` items
+- `<dl> </dl>` indicate a definition list. This is used for defining key-value pairs with `<dt> key </dt>` definition term and `<dd> value </dd>` definition description tags.
+
+## Navigation
+
+Typically this appears as unorganized list within `<nav> </nav>` tags and let CSS take care of formatting.
+```html5
+<nav role="nagivation" aria-label="navigation menu">
+  <ul class="navbar">
+     <li> <a href="link">page1</a></li>
+     <li> <a href="link">page2</a></li>
+     <li> <a href="link">page3</a></li>
+  </ul>
+</nav>
+```
+
+## Media stuff
+
+### Images
+
+ Indicated using with source, altenative description, default size but also source set for different screen pixel density and browser size (using the image width attribute).
+
+```html5
+<img scr="source.jpg"
+     alt="content" width="" height=""
+     scrset="source_small.jpg 480w,
+             source_medium.jpg 960w,
+             source_big.jpg 1920w">
+```
+We can also use `<picture> </picture>` to alternate images based on device. Add `<figure> </figure>` to add other aspects like `<figcaption> </figcaption>`
+
+```html5
+<figure>
+<picture>
+   <source scrset="source_small.jpg 480w,
+                   source_medium.jpg 960w,
+                   source_big.jpg 1920w">
+   <source media="min-width:600px"
+           scrset="source_small_croped.jpg 480w,
+                   source_medium_croped.jpg 960w,
+                   source_big_croped.jpg 1920w">
+   <img scr="source.jpg"
+        alt="content" width="" height="">
+</picture>
+<figcaption> That's my cool picture </figcaption>
+</figure>
+```
+
+## Audio
+
+Works like `<picture>`.  All browsers also have basic controls that can be called for simplicity.
+`<audio controls scr="my_file.mp3"></audio>`
+
+## Video
+
+Works like `<audio>`: `<video controls scr="my_file.mp4"></video>`. Ideally we want to change resolution like for pictures, using Adaptive Bit Rate Streaming. That's way too compicated --> host on a video hosting platform and embed the video instead (they'll do the ABRS).
+
+Embedding: `<iframe ... ></iframe>`
+
+## Caption
+
+WebVideoTextTracks (WebVTT) is the way to go for video (and audio) caption.
+```html5
+   <track scr="my_text.vtt"
+          kind="captions"
+          label="english"
+          srclang="en"
+          default>
+   </track>
+```

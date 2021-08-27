@@ -1,0 +1,210 @@
+# Basic maths for Statistics
+
+## Calculus
+
+#### notions
+
+*Exponential* this is the term used as power, e.g. 2<sup>3</sup>
+When multiplying scalars, their exponents addup, e.g. 2x<sup>3</sup>*4x<sup>2</sup>=8x<sup>5</sup>
+When dividing scalars, their exponents are subtracted, e.g. 4x<sup>2</sup>/2x<sup>3</sup>=2x<sup>-1</sup>
+
+*Radical* is the operation to find the root number, e.g.	$\sqrt[3]{8}$  which is also 8<sup>1/3</sup>
+
+*Logarithm* is the operation to find the exponent, e.g. log<sub>(2)</sub>(8)
+
+_In Python:_
+```python
+import math
+x = 2**3
+print(x)
+rad = 8**(1./3)
+print(rad)
+lg = math.log(2, 8)
+print(lg)
+```
+
+_In Matlab/Octave:_
+```Octave
+x = 2^3
+rad = 8^(1/3)
+lg = log(8)/log(2) % log is the is the natural logarithm
+```
+
+
+### Good old stuff to remember
+
+__Difference of squares__
+
+x<sup>2</sup>-b can be rewriten as x<sup>2</sup>-$\sqrt(b)$ <sup>2</sup>
+which itselft = (x-$sqrt(b)$)(a+$sqrt(b)$)
+
+_Example of difference of squares_
+
+x<sup>2</sup>-9 = x<sup>2</sup>-3<sup>2</sup> = (x-3)(x+3)
+
+__Perfect squares__
+
+(a+b)<sup>2</sup> = a<sup>2</sup>+b<sup>2</sup>+2ab.
+
+__How to solve a quadratic equation y = ax<sup>2</sup>+bx+c__
+- Case 1: use the solution x = (-b +- $\sqrt(b^2-4ac)$) / 2a and get values of y for these two symetric x values
+- Case 2: use the vertex of the quadratic equation with h=-b/2a, and use this value as x to find y.
+- Case 3: use factorization based on the polynomial a<sup>2</sup>+b<sup>2</sup>+2ab.
+
+_Example of factorization_
+
+1. y = x<sup>2</sup>+6x-7
+2. setting y = 0 we obtain x<sup>2</sup>+6x = 7
+3. we want an equation looking like x<sup>2</sup>+c<sup>2</sup>+2cx, that is 2cx=6 thus c=3
+4. we rewrite the equation as x<sup>2</sup>+9+6x=16 which is our familiar polynomial and can thus be factorized
+5. we rewrite the equation as (x+3)<sup>2</sup> = 16
+6. the solution is x -3 = +-4 i.e. x = [-7 1]
+
+### Functions
+
+__Derivatives__
+
+For a given function f(x), we can get the slope by computing the derivative. If we want to know the slope at a given point, we need to take points at the limits. For intance, for f(x) = x<sup>2</sup>+1, we want to compute the slope at x = 5 taking lim f(x) x--> 5.
+
+To compute the derivative, simply take the distance between two points, h, and make that distance infinitessimally small. The slope is y(2)-y(1) / x(2)-(1) i.e. y(2)-y(1) / h, and for a function this is f(x2)-f(x1)/h.
+
+_Example of derivative_
+
+- f(x) = x<sup>2</sup>+1
+- h = x2-x1 and thus x2 = h+x1
+- m = f(x2)-f(x1)/h and thus m = f(x1+h)-f(x1)/h
+- f'(x) = lim<sub>h-->0</sub> f(x1+h)-f(x1)/h is the derivative, the tangente of the point x1, the slope
+
+1. At say x = 3, we have f'(3) = [f(3+h)-f(3)]/h
+2. We rewrite as f'(3) = [(3+h)<sup>2</sup>+1 - 3<sup>2</sup>+1] /h
+3. This simplyfies to f'(3) = [h<sup>2</sup>+6h] / h i.e. h+6
+4. Thus f'(3) lim<sub>h-->0</sub> = 6
+
+_In Python:_
+```python
+from matplotlib import pyplot
+
+# define the function f
+def f(x):
+    return x**2+1
+
+# pick up some xs to get ys
+x = list(range(-10, 11))
+y = [f(i) for i in x]
+
+# define the derivative
+def df(x,h):
+    return (f(x+h)-f(x))/h
+
+x1 = 3
+y1 = f(x1)
+h = 0.1
+m = round(df(x1,h))
+print('At x=3 the derivative/slope is', m)
+
+# plot
+pyplot.xlabel('x')
+pyplot.ylabel('f(x)')
+pyplot.grid()
+pyplot.plot(x,y, color='green')
+pyplot.scatter(3,10, c='red')
+xMin = x1-1
+xMax = x1+1
+yMin = y1-m
+yMax = y1+m
+pyplot.plot([xMin,xMax],[yMin,yMax], color='magenta')
+pyplot.show()
+```
+
+_In Matlab/Octave:_
+```Octave
+% define the function f
+f = @(x) x.^2 +1;
+
+% pick up some xs to get ys
+x = linspace(-10,10);
+y = f(x);
+
+% define the derivative
+df = @(x,h) (f(x+h)-f(x))/h;
+
+x1 = 3;
+y1 = f(x1);
+h = 0.1;
+m = round(df(x1,h));
+fprintf('At x=3 the derivative/slope is %g \n',m)
+
+% plot
+plot(x,y, 'green')
+hold on; grid on
+xMin = x1-1;
+xMax = x1+1;
+yMin = y1-m;
+yMax = y1+m;
+scatter(3,10, 'red','filled')
+plot([xMin,xMax],[yMin,yMax], 'magenta')
+xlabel('x')
+ylabel('f(x)')
+```
+
+
+_Short cuts_
+
+If f(x)=c, then f'(x)=0, i.e. the derivative of a constant is 0.
+
+If f(x)=g(x)+h(x), then f'(x)=g'(x)+h'(x).
+
+If f(x)=x<sup>n</sup>, then f'(x)=nx<sup>n-1</sup>. This is known as the Power Rule.
+For instance the derivative of 10x is 10 (10 * 0x<sup>0</sup>), similarly 10 * x<sup>2</sup> derivative is 20x (10 * 2x<sup>2-1</sup>).
+
+If f(x)=g(x)*h(x), then f'(x)=(g'(x)*h(x))+(g(x)*h'(x)).  This is known as the Product Rule.
+
+If f(x)=g(x)/h(x), then f'(x)=(g'(x)*h(x))-(g(x)*h'(x))/[h(x)]<sup>2</sup>. This is known as the Quotien Rule.
+
+If f(x)=g(h(x)), then f'(x)=g'(h(x))*h'(x). This is known as the Chain Rule.
+
+__Usage__
+
+Compute the derivative to know if a function increases or descreases. Compute the 2nd order derivatives to find maxima or minima (i.e. which value gives 0, a typical optimization problem). Compute integrals for areas under the curve (typical application being the probability of occurance between 2 values).
+
+For instance, take the parabollic equation:  k(x)=−10x<sup>2</sup>+100x+3
+
+_When does k reach its maximal value?_  The derivative is k'(x)=-20x+100. Solving for -20x+100=0 we obtain x=5, that is the parabollic equation reaches maximal value at x=5.
+
+_Is this a maximum or a minimum?_ It's not always obvious to know the direction and therefore tell from the derivative if one reaches a maximum or mininum. _Taking the second order derivative_ however tells is the direction of the rate of change, if positive it's a minimum, if negative it's a maximum. The second order derivative here is k''(x)=-20. This tells us the derivative is linear and decreasing and therefore this must be a maximum.
+
+__Partial Derivatives__
+
+Instead of having a single variable, a function can operate simultaneously on multiple variables. Optimizing such function requires to compute _partial derivatives_, that is derivatives for each variable, conditioning on the others.
+
+For instance, f(x,y)=x<sup>2</sup>+y<sup>2</sup>, gives f'(x,y)= $\delta$(x<sup>2</sup>+y<sup>2</sup>)/$\delta$x.
+We solve by taking each part, i.e. $\delta$x<sup>2</sup>/$\delta$x and $\delta$y<sup>2</sup>/$\delta$x, and optimizing for x=0.
+- the derivative of $\delta$x<sup>2</sup>/$\delta$x is 2x.
+- the derivative of $\delta$y<sup>2</sup>/$\delta$x is 0.
+- thus $\delta$(x<sup>2</sup>+y<sup>2</sup>)/$\delta$x = 2x+0.
+
+We solve f'(x,y)= $\delta$(x<sup>2</sup>+y<sup>2</sup>)/$\delta$y by taking each part and optimizing for y=0.
+- the derivative of $\delta$x<sup>2</sup>/$\delta$y is 0.
+- the derivative of $\delta$y<sup>2</sup>/$\delta$y is 2y.
+- thus $\delta$(x<sup>2</sup>+y<sup>2</sup>)/$\delta$y = 0+2y.
+
+_Computing gradients_
+
+Using partial derivatives, we can find the maximum and minimum in N dimentional space. The solution is a _gradient_, i.e. a  vector of variables.
+
+For instance, f(x,y)=x<sup>2</sup>+y<sup>2</sup>, gives _grad(f'(x,y)) =_
+$$
+\begin{bmatrix}
+2x\\
+2y\\
+\end{bmatrix}
+$$
+
+Obviously, the minimum here is [0 0] but in general, we can use gradients to orient to solution. For instance, a _gradient descent_ algorithm will do:
+
+1. Take some starting guess for x and y.
+2. Compute the gradient.
+3. Take a small step* in the direction of the gradient.
+4. Determine if the gradient is close to zero. If so, then stop, since the gradient will be zero at the minimum otherwise repeat.
+
+'*' the step size is another parameter, to big and the minimum can be missed, to small and the solution could converge on a local minimum (see cost functions)
