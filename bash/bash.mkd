@@ -1,5 +1,7 @@
 # Simple bash to do stuff on files
 
+[Bourne Again Shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) improving on [Bourne Shell](https://en.wikipedia.org/wiki/Bourne_shell) 
+
 ## basic shell operations
 
 - `pwd`                current working directory
@@ -26,9 +28,12 @@ bonus: `history` reveal all commands used (`history !number`)
 
 By add #!/bin/bash at the top, this makes a script an executable (e.g. call it in command line as ./myscript.sh) - ensure execution allowed with chmod +rx myscript.sh
 
+Variable are declared with Capitals and then refer to them with $. For positional argument just use a counter, for instance `echo "username? $1"; echo "password? $2";`
+
 ```bash
 #!/bin/bash
-echo "running copy script"
+DISPLAY = "running copy script"
+echo = $DISPLAY
 for include in [some char to match]; do
     cp -- "$include"* test/
 done
