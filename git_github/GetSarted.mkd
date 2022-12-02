@@ -11,7 +11,7 @@ Note: a little knowledge of bash goes a long way when using Git command line.
 Open a terminal (from VS code via the terminal menu, get [Git Bash](https://gitforwindows.org/) on Windows, any terminal otherwise)  
  
 ```
-git config --global user.bane "YourName"   
+git config --global user.nane "YourName"   
 git config --global user.email "YourEmail"
 ```
 
@@ -31,19 +31,20 @@ cd ..
 ```
 ### Staging and committing files
 
-Create a text file in that folder, say ReadMe.txt or ReadMe.mkd if you know Markdown (you should, this is awesome). It will now appear automatically in your GitHub desktop, this has been staged. Of course you can also stage it manually.
+Create a text file in that folder, say ``ReadMe.txt`` or ``ReadMe.mkd`` if you know Markdown (you should, this is awesome). It will now appear automatically in your GitHub desktop, this has been staged. Of course you can also stage it manually.
 
 ```
 git add --all
-git commit -m "my fist comment"
+git commit -m "my fist commit"
 ```
 
-You can now check the history of this file!  
+Modify the file adding somne text, and try again to add and commit. You can now check the history of this file!  
+
 ```
 git log --oneline
 ```
 
-### commit, reverse, etc .. 
+### Commit and restore 
 
 Modify the ReadMe file as you want. Turns out you are not happy with your change! you can revert easily using:
 ```
@@ -52,8 +53,15 @@ git restore
 ```
 
 What happen if you modify, and commit - can you then restore?
+```
+git log --oneline
+git reset #entrer here the commit hash#
+git status
+```
 
-### ignore some files
+Note the soft reset undo the commit but has left the changes. To reset witout the changes do ``git reset --hard ####``.  
+
+## Ignore files
 
 Before, publishing it - let's make a private ``passwords.txt`` file and a ``notes`` directory with a ``notes.md`` file. How private? well simply by telling git to not track it.  
 
@@ -75,15 +83,48 @@ notes/
 **/*.md
 ```
 
-### time to put it online
+Now add and commit. Last thing: let's rewrite history by applying that commit at different point in time using e.g. ``git rebase -i HEAD~2`` rebasing the code 1 commit in the past, i.e. right after your 1st commit. 
+
+## Time to get online
 
 ```
 git push origin https://github.com/myaccount/myrepo/main
 ```
 
-## Working with a remote repository
+### Working with a remote repository
 
-Go to GitHub and change your text file in the browser.
+Go to GitHub and change your text file in the browser. Now let's pull it back onto your computer.
+
+
+### Make a branch 
+
+The idea here is you want to make a branch, you can check it up right now you are on main.
+
+```
+git branch
+```
+
+Let's make a new version of the current repository
+```
+git switch -c test_branch
+```
+
+Now go ahead and modify some stuff, ``add`` and ``commit``. You can merge test_branch into main.
+
+```
+git status
+git merge test_branch
+git branch -d test_branch
+```
+
+### Make a fork 
+
+ A fork is just a branch from someone else - go ahead fork someone repository, make some changes and do a pull request online. That person has now to reject/accept your PR and merge that branch into his/her repository, just like you did with your own branch.  
+
+
+
+
+
 
 
 
