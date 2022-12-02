@@ -9,8 +9,8 @@ The only code you need for putting new code as a user is:
 ```
 cd local_git_dir
 git add XXX (which file to add – also use * etc for multiple files)
-git commit –m 'blablabla'
-git commit -am 'ammending with proper text'
+git commit –m "blablabla"
+git commit -am "ammending with proper text"
 git remote add origin https://github.com/myaccount/myrepo.git  (this is done only once)
 git push origin main
 ```
@@ -33,4 +33,10 @@ To create a new version and eventually merge
 ```
 git branch
 git merge
+```
+
+Clean-up files
+```
+git clean -dn % check untracked directory and files to remove
+git clean -fd % force untracked remove directory and files 
 ```
