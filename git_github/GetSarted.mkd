@@ -1,0 +1,90 @@
+# Instruction to get started with Git and GitHub
+
+1 - Get a descent editor (Visual Studio or Atom recommended, Notepad++ if you want to go really light)  
+2 - Go to github and open an acount  
+3 - Windows and Mac users, download and install GitHub desktop  (GUI to manage repositories + Git powershell)  
+  
+Note: a little knowledge of bash goes a long way when using Git command line.  
+
+## Link things together
+
+Open a terminal (from VS code via the terminal menu, get [Git Bash](https://gitforwindows.org/) on Windows, any terminal otherwise)  
+ 
+```
+git config --global user.bane "YourName"   
+git config --global user.email "YourEmail"
+```
+
+## Your 1st local repository
+
+Create a folder somewhere on your drive, and with the terminal (or the GUI) move in there, and initiate git. This creates an invisible folder (.git) with some extra files, those allow to version whatever* is in the folder above.
+
+* by whatever I mean text-based file formats (.txt, .mkd, .m, .py .. any code base really). Closed file formats, images, etc .. are tracked as 'binaries' but it's not really designed for that. 
+
+```
+cd path_to_your_folder_of_choice  
+git init  
+ls -la
+cd .git
+ls -la
+cd ..
+```
+### Staging and committing files
+
+Create a text file in that folder, say ReadMe.txt or ReadMe.mkd if you know Markdown (you should, this is awesome). It will now appear automatically in your GitHub desktop, this has been staged. Of course you can also stage it manually.
+
+```
+git add --all
+git commit -m "my fist comment"
+```
+
+You can now check the history of this file!  
+```
+git log --oneline
+```
+
+### commit, reverse, etc .. 
+
+Modify the ReadMe file as you want. Turns out you are not happy with your change! you can revert easily using:
+```
+git status
+git restore
+```
+
+What happen if you modify, and commit - can you then restore?
+
+### ignore some files
+
+Before, publishing it - let's make a private ``passwords.txt`` file and a ``notes`` directory with a ``notes.md`` file. How private? well simply by telling git to not track it.  
+
+You tree structure now should be something like:  
+
+```
+|-- your_folder_of_choice  
+  |-- ReadMe.txt  
+  |-- passwords.txt  
+  |-+ notes  
+    | notes.md  
+```
+
+Now create a ``.gitignore`` file, and let's edit it as to ignore what we want
+
+```.gitignore
+passwords.txt
+notes/
+**/*.md
+```
+
+### time to put it online
+
+```
+git push origin https://github.com/myaccount/myrepo/main
+```
+
+## Working with a remote repository
+
+Go to GitHub and change your text file in the browser.
+
+
+
+
