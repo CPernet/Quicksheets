@@ -31,7 +31,7 @@ cd ..
 ```
 ### Staging and committing files
 
-Create a text file in that folder, say ``ReadMe.txt`` or ``ReadMe.mkd`` if you know Markdown (you should, this is awesome). It will now appear automatically in your GitHub desktop, this has been staged. Of course you can also stage it manually.
+Create a text file in that folder, say ``ReadMe.txt`` or ``ReadMe.mkd`` if you know Markdown (you should, this is awesome). It will now appear automatically in your GitHub desktop, this has been staged. Of course you can also stage it manually. This simply allows tracking files, then commit to create a time stamp.
 
 ```
 git add --all
