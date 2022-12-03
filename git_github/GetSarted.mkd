@@ -138,6 +138,7 @@ git branch -d test_branch
  From any repository on BitHub you have to `clone` on your computer.  
 ```
 git clone <repository url.git> 
+git fetch
 ```
 
  _Group work_: (1) open an issue (2) fork, make change and PR, link to issue (3) play with the comments, code review, etc (4) merge.
