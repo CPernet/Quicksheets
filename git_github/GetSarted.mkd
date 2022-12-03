@@ -4,7 +4,7 @@
 2 - Go to github and open an acount (witch you may have if you read this online)  
 3 - Windows and Mac users, download and install GitHub desktop  (GUI to manage repositories, it really is easiser)  
   
-Note: a little knowledge of bash goes a long way when using Git command line.  
+Note: a little knowledge of [bash](https://github.com/CPernet/Quicksheets/blob/main/bash/bash.mkd) goes a long way when using Git command line.  
 
 ## Link things together
 
