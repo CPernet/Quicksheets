@@ -17,9 +17,8 @@ git config --global user.email "YourEmail"
 
 ## Your 1st local repository
 
-Create a folder somewhere on your drive, and with the terminal (or the GUI) move in there, and initiate git. This creates an invisible folder (.git) with some extra files, those allow to version whatever* is in the folder above.
-
-* by whatever I mean text-based file formats (.txt, .mkd, .m, .py .. any code base really). Closed file formats, images, etc .. are tracked as 'binaries' but it's not really designed for that. 
+Create a folder somewhere on your drive, and create a text file in that folder, say `ReadMe.txt` or `ReadMe.mkd` if you know Markdown (you should, this is awesome).  
+With the terminal move in there, and initiate git. This creates an invisible folder (.git) with some extra files, those allow to version whatever is in the folder above. By 'whatever', I mean text-based file formats (.txt, .mkd, .m, .py .. any code base really). Closed file formats, images, etc .. are tracked as 'binaries' but it's not really designed for that. 
 
 ```
 cd path_to_your_folder_of_choice  
@@ -31,7 +30,7 @@ cd ..
 ```
 ### Staging and committing files
 
-Create a text file in that folder, say `ReadMe.txt` or `ReadMe.mkd` if you know Markdown (you should, this is awesome). It will now appear automatically in your GitHub desktop, this has been staged. Of course you can also stage it manually. This simply allows tracking files, then commit to create a time stamp.
+The ReadMe file appear automatically in your GitHub desktop skipping the staging step - this is where one makes a difference between git tracked and non tracked files (kind of useful to quickly undo stuff, see below). Let's go ahaed and stage it manually, allowing tracking the file; then we commit to create a time stamp.
 
 ```
 git add .
