@@ -1,7 +1,7 @@
 # Instruction to get started with Git and GitHub
 
 1 - Get a descent editor (Visual Studio or Atom recommended, Notepad++ if you want to go really light)  
-2 - Go to github and open an acount (witch you may have if you read this online)
+2 - Go to github and open an acount (witch you may have if you read this online)  
 3 - Windows and Mac users, download and install GitHub desktop  (GUI to manage repositories + Git powershell)  
   
 Note: a little knowledge of bash goes a long way when using Git command line.  
