@@ -10,6 +10,7 @@
   - `ls -a`            (a=all) includes hidden files
   - `ls -l`            (l=long) reveals permissions
   - `ls -la`           all+long
+  - add h everywhere   = human readable
 - `cat filename`       reads the content of the file
   - `cat -n`           add line numbers
 - `wc`                 to just get the number of lines, words and characters
