@@ -80,7 +80,7 @@ You tree structure now should be something like:
 Now create a ``.gitignore`` file, and let's edit it as to ignore what we want
 
 ```.gitignore
-passwords.txt
+tmpinfo.txt
 notes/
 **/*.md
 ```
