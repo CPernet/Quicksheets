@@ -135,6 +135,8 @@ git branch -d test_branch
 
  A fork is just a branch from someone else - go ahead fork someone repository, make some changes and do a pull request online. That person has now to reject/accept your PR and merge that branch into his/her repository, just like you did with your own branch (you can also pull request to yourself from a branch).
 
+ _Group work_: (1) open an issue (2) fork, make change and PR, link to issue (3) play with the comments, code review, etc (4) merge.
+
 
 
 
