@@ -85,7 +85,9 @@ notes/
 **/*.md
 ```
 
-Now add and commit. Last thing: let's rewrite history by applying that commit at different point in time using e.g. ``git rebase -i HEAD~2`` rebasing the code 1 commit in the past, i.e. right after your 1st commit. 
+Now `add` and `commit`.  
+  
+_Last thing:_ let's rewrite history! here we are applying that last commit at different point in time using e.g. ``git rebase -i HEAD~2`` rebasing the code 1 commit in the past, i.e. right after your 1st commit. Check it using `git log -oneline` 
 
 ## Time to get online
 
