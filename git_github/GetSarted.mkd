@@ -17,7 +17,7 @@ git config --global user.email "YourEmail"
 
 ## Your 1st local repository
 
-Create a folder somewhere on your drive, and create a text file in that folder, say `ReadMe.txt` or `ReadMe.mkd` if you know Markdown (you should, this is awesome).  
+Create a folder somewhere on your drive, and create a text file in that folder, say `ReadMe.txt` or `ReadMe.mkd` if you know Markdown (you should, this is awesome).    
 With the terminal move in there, and initiate git. This creates an invisible folder (.git) with some extra files, those allow to version whatever is in the folder above. By 'whatever', I mean text-based file formats (.txt, .mkd, .m, .py .. any code base really). Closed file formats, images, etc .. are tracked as 'binaries' but it's not really designed for that. 
 
 ```
