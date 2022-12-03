@@ -123,7 +123,7 @@ Let's make a new version of the current repository
 git switch -c test_branch
 ```
 
-Now go ahead and modify some stuff, ``add`` and ``commit``. You can merge test_branch into main.
+Now go ahead and modify some stuff, `add` and `commit`. You can merge test_branch into main.
 
 ```
 git status
@@ -134,6 +134,11 @@ git branch -d test_branch
 ### Make a fork 
 
  A fork is just a branch from someone else - go ahead fork someone repository, make some changes and do a pull request online. That person has now to reject/accept your PR and merge that branch into his/her repository, just like you did with your own branch (you can also pull request to yourself from a branch).
+
+ From any repository on BitHub you have to `clone` on your computer.  
+```
+git clone <repository url.git> 
+```
 
  _Group work_: (1) open an issue (2) fork, make change and PR, link to issue (3) play with the comments, code review, etc (4) merge.
 
