@@ -50,7 +50,7 @@ Modify the ReadMe file as you want. Turns out you are not happy with your change
 
 ```
 git status
-git restore
+git restore ReadMe.txt
 ```
 
 What happen if you modify, and commit - can you then restore?
