@@ -128,7 +128,8 @@ git switch -c test_branch
 Now go ahead and modify some stuff, `add` and `commit`. You can merge test_branch into main.
 
 ```
-git status
+git branch
+git switch main # or master depends how it is called 
 git merge test_branch
 git branch -d test_branch
 ```
