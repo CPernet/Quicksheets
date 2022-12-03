@@ -29,7 +29,7 @@ bonus: `history` reveal all commands used (`history !number`)
 
 By addimg `#!/bin/bash` at the top, this makes a script an executable (e.g. call it in command line as ./myscript.sh) - ensure execution allowed with `chmod +rx myscript.sh`
 
-Variable are declared with Capitals and then refer to them with $. For positional argument just use a counter, for instance `echo "username? $1"; echo "password? $2";`
+Variables are declared with Capitals and then refer to them with $. For positional argument just use a counter, for instance `echo "username? $1"; echo "password? $2";`
 
 ```bash
 #!/bin/bash
