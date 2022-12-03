@@ -94,11 +94,11 @@ _Last thing:_ let's rewrite history! here we are applying that last commit at di
 - always have access to your code wherever you are
 - allows working with others (social coding)
 
-Go to [GitHub](https://github.com/) and create a new repository. No need to have a ReadMe or .gitignore because we have done it already. Always use a [license](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506622/). 
+Go to [GitHub](https://github.com/) and create a new repository. No need to have a ReadMe or .gitignore because we have done it already. Always use a [license](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506622/).
 
 ```
 git remote add origin <repository url.git> 
-git push -u origin main
+git push -u origin HEAD:main
 # git push --all
 ```
 
