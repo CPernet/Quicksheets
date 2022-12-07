@@ -33,7 +33,7 @@ cd ..
 ```
 ### Staging and committing files
 
-The ReadMe file appear automatically in your GitHub desktop skipping the staging step - this is where one makes a difference between git tracked and non tracked files (kind of useful to quickly undo stuff, see below). Let's go ahaed and stage it manually, allowing tracking the file; then we commit to create a time stamp.
+The ``ReadMe`` file appear automatically in your GitHub desktop skipping the staging step - this is where one makes a difference between git tracked and non tracked files (kind of useful to quickly undo stuff, see below). Let's go ahaed and stage it manually, allowing tracking the file; then we commit to create a time stamp.
 
 ```
 git add .
