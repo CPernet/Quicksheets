@@ -89,7 +89,7 @@ notes/
 
 Now `add` and `commit`.  
   
-_Last thing:_ let's rewrite history! here we are applying that last commit at different point in time using e.g. `git rebase -i HEAD~2` rebasing the code 1 commit in the past, i.e. right after your 1st commit. Here I suggest to always use `-i` opening an editor to organize your history an needed. Check the result using `git log -oneline` 
+_Last thing:_ let's rewrite history! here we are applying that last commit at different point in time using e.g. `git rebase -i HEAD~2` rebasing the code 1 commit in the past, i.e. right after your 1st commit. Here I suggest to always use `-i` opening an editor to organize your history as needed. Check the result using `git log --oneline` 
 
 ## Time to get online
 
