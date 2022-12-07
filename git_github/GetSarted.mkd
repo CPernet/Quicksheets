@@ -6,7 +6,7 @@
   
 Note: a little knowledge of [bash](https://github.com/CPernet/Quicksheets/blob/main/bash/bash.mkd) goes a long way when using Git command line.  
 
-Warning: (1) make sur you loggin from your editor to Github allowing easy push/pull/clone to/from the web; (2) make sure any folder you work one is not protected or ensure the sofware is allowed to write (e.g. exclude a folder in F-secure, allow VS code, etc).
+Warning: (1) make sur you loggin from your editor to Github allowing easy push/pull/clone to/from the web; (2) make sure any folder you work one is not protected or ensure the software is allowed to write (e.g. exclude a folder in F-secure, allow VS code, etc).
 
 ## Link things together
 
