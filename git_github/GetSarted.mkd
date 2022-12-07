@@ -106,7 +106,7 @@ git push -u origin HEAD:main
 
 ### Working with a remote repository
 
-You should always use a [license](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506622/), even super permissive (CC0). Go to GitHub and click on `Add file` --> `create new file` and call it `License.txt` --> a menu appers on the right `choose a license template`. Choose one, review, etc .. this will create a new branch and a pull request into your main branch. Go ahead, create the PR, accept and merge, and delte the branch (we'll come back to PR later). Now let's pull that new file onto your computer.
+You should always use a [license](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506622/), even super permissive (CC0). Go to GitHub and click on `Add file` --> `create new file` and call it `License.txt` --> a menu appers on the right `choose a license template`. Choose one, review, etc .. this will create a new branch and a pull request into your main branch. Go ahead, create the PR, accept and merge, and delete the branch (we'll come back to PR later). Now let's pull that new file onto your computer.
 
 ```
 git pull
