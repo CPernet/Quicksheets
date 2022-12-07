@@ -138,7 +138,7 @@ git branch -d test_branch
 
  A fork is just a branch from someone else - go ahead fork someone repository, make some changes and do a pull request online. That person has now to reject/accept your PR and merge that branch into his/her repository, just like you did with your own branch (you can also pull request to yourself from a branch).
 
- From any repository on BitHub you have to `clone` on your computer.  
+ From any repository on GitHub you have to `clone` on your computer.  
 ```
 git clone <repository url.git> 
 git fetch
