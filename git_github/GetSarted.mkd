@@ -1,25 +1,27 @@
 # Instruction to get started with Git and GitHub
 
-1 - Get a descent editor (Visual Studio or Atom recommended, Notepad++ if you want to go really light)  
+1 - Get a decent editor [Visual Studio](https://code.visualstudio.com/) or [Atom](https://atom.io/) recommended, [Notepad++](https://notepad-plus-plus.org/downloads/) if you want to go really light)  
 2 - Go to github and open an acount (witch you may have if you read this online)  
 3 - Windows and Mac users, download and install GitHub desktop  (GUI to manage repositories, it really is easiser)  
   
 Note: a little knowledge of [bash](https://github.com/CPernet/Quicksheets/blob/main/bash/bash.mkd) goes a long way when using Git command line.  
+
+Warning: (1) make sur you loggin from your editor to Github allowing easy push/pull/clone to/from the web; (2) make sure any folder you work one is not protected or ensure the software is allowed to write (e.g. exclude a folder in F-secure, allow VS code, etc).
 
 ## Link things together
 
 Open a terminal (from VS code via the terminal menu, get [Git Bash](https://gitforwindows.org/) on Windows, any terminal otherwise)  
  
 ```
-git config --global user.nane "YourName"   
+git config --global user.nane "GitHubUserName"   
 git config --global user.email "YourEmail"
 ```
 
 ## Your 1st local repository
 
-Create a folder somewhere on your drive, and with the terminal (or the GUI) move in there, and initiate git. This creates an invisible folder (.git) with some extra files, those allow to version whatever* is in the folder above.
-
-* by whatever I mean text-based file formats (.txt, .mkd, .m, .py .. any code base really). Closed file formats, images, etc .. are tracked as 'binaries' but it's not really designed for that. 
+Create a folder somewhere on your drive, and create a text file in that folder, say `ReadMe.txt` or `ReadMe.md` if you know [Markdown](https://www.markdownguide.org/) (you should, this is awesome).  
+    
+With the terminal move in there, and initiate git. This creates an invisible folder (.git) with some extra files, those allow to version whatever is in the folder above. By 'whatever', I mean text-based file formats (.txt, .md, .m, .py .. any code base really). Closed file formats, images, etc .. are tracked as 'binaries' but it's not really designed for that. 
 
 ```
 cd path_to_your_folder_of_choice  
@@ -31,7 +33,7 @@ cd ..
 ```
 ### Staging and committing files
 
-Create a text file in that folder, say `ReadMe.txt` or `ReadMe.mkd` if you know Markdown (you should, this is awesome). It will now appear automatically in your GitHub desktop, this has been staged. Of course you can also stage it manually. This simply allows tracking files, then commit to create a time stamp.
+The ``ReadMe`` file appears automatically in your GitHub desktop skipping the staging step - this is where one makes a difference between git tracked and non tracked files (kind of useful to quickly undo stuff, see below). Let's go ahaed and stage it manually, allowing tracking the file; then we commit to create a time stamp.
 
 ```
 git add .
@@ -87,24 +89,24 @@ notes/
 
 Now `add` and `commit`.  
   
-_Last thing:_ let's rewrite history! here we are applying that last commit at different point in time using e.g. `git rebase -i HEAD~2` rebasing the code 1 commit in the past, i.e. right after your 1st commit. Here I suggest to always use `-i` opening an editor to organize your history an needed. Check the result using `git log -oneline` 
+_Last thing:_ let's rewrite history! here we are applying that last commit at different point in time using e.g. `git rebase -i HEAD~2` rebasing the code 1 commit in the past, i.e. right after your 1st commit. Here I suggest to always use `-i` opening an editor to organize your history as needed. Check the result using `git log --oneline` 
 
 ## Time to get online
 
 - always have access to your code wherever you are
 - allows working with others (social coding)
 
-Go to [GitHub](https://github.com/) and create a new repository. No need to have a ReadMe or .gitignore because we have done it already. Always use a [license](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506622/). 
+Go to [GitHub](https://github.com/) and create a new repository. No need to have a ReadMe or .gitignore because we have done it already.  
 
 ```
 git remote add origin <repository url.git> 
-git push -u origin main
+git push -u origin HEAD:main
 # git push --all
 ```
 
 ### Working with a remote repository
 
-Go to GitHub and change your text file in the browser. Now let's pull it back onto your computer.
+You should always use a [license](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506622/), even super permissive (CC0). Go to GitHub and click on `Add file` --> `create new file` and call it `License.txt` --> a menu appers on the right `choose a license template`. Choose one, review, etc .. this will create a new branch and a pull request into your main branch. Go ahead, create the PR, accept and merge, and delete the branch (we'll come back to PR later). Now let's pull that new file onto your computer.
 
 ```
 git pull
@@ -126,7 +128,8 @@ git switch -c test_branch
 Now go ahead and modify some stuff, `add` and `commit`. You can merge test_branch into main.
 
 ```
-git status
+git branch
+git switch main # or master depends how it is called 
 git merge test_branch
 git branch -d test_branch
 ```
@@ -135,7 +138,7 @@ git branch -d test_branch
 
  A fork is just a branch from someone else - go ahead fork someone repository, make some changes and do a pull request online. That person has now to reject/accept your PR and merge that branch into his/her repository, just like you did with your own branch (you can also pull request to yourself from a branch).
 
- From any repository on BitHub you have to `clone` on your computer.  
+ From any repository on GitHub you have to `clone` on your computer.  
 ```
 git clone <repository url.git> 
 git fetch
