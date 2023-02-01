@@ -1,5 +1,7 @@
 # Simple script to generate the basic file structure of a research project (in brain imaging)
 # to run type ./make_project.sh project_name
+# you will likely need to also do a 'chmod +x make_project.sh' in teminal to be able tio execute
+#
 # - project_name folder
 # |- README.txt (basic description of the project)
 # |- requirement.txt (list of all the packages needed to run the code)
@@ -20,7 +22,7 @@ mkdir Dissemination
 mkdir BIDS_derivatives
 cd BIDS_derivatives
 touch participants.tsv
-echo '{ "DatasetType": "derivative", "DatasetLinks": ["path1","path2"], "Funding": "grant(s) and number(s)", "EthicsApprovals": "approval(s)" }' > dataset_description.json
+echo '{ "Project Name": "An informative project name", "Project Description": "Brief project description", "Project Responsible": "Person Name", "Primary Contact": "person@nru.dk", "Project Collaborators": ["Person Name1", "Person Name2", "Person Name3"], "Date Created": "YYYY-MM-DD", "DatasetType": "derivative", "DatasetLinks": ["path1","path2"], "Funding": "grant(s) and number(s)", "EthicsApprovals": "approval(s)"}' > dataset_description.json
 cd ..
 touch README.txt
 touch requirement.txt
