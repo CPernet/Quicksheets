@@ -1,6 +1,6 @@
 # Instruction to get started with Git and GitHub
 
-1 - Get a decent editor [Visual Studio](https://code.visualstudio.com/) or [Atom](https://atom.io/) recommended, [Notepad++](https://notepad-plus-plus.org/downloads/) if you want to go really light)  
+1 - Get a decent editor [Visual Studio](https://code.visualstudio.com/) is recommended, [Notepad++](https://notepad-plus-plus.org/downloads/) if you want to go really light)  
 2 - Go to github and open an acount (witch you may have if you read this online)  
 3 - Windows and Mac users, download and install GitHub desktop  (GUI to manage repositories, it really is easiser)  
   
