@@ -1,13 +1,13 @@
 # Simple script to generate the basic file structure of a research project (in brain imaging)
 # to run type ./make_project.sh project_name
-# you will likely need to also do a 'chmod +x make_project.sh' in teminal to be able tio execute
+# you will likely need to also do a 'chmod +x make_project.sh' in teminal to be able to execute
 #
 # - project_name folder
 # |- README.txt (basic description of the project)
 # |- requirement.txt (list of all the packages needed to run the code)
 # |- BIDS derivatives folder (where the data will be stored)
-#  |- participants.tsv (list of all the participants and raw data origin)
-#  |- dataset_description.json (description of the dataset referencing ethics and funding)
+# |- participants.tsv (list of all the participants and raw data origin)
+# |- dataset_description.json (description of the dataset referencing ethics and funding)
 # |- Code folder (where all code will be stored)
 # |- Figures folder (where all figures will be stored)
 # |- Dissemination folder (where all outputs, poster, presentation, article will be stored)
